@@ -19,13 +19,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     scrollSetting: {
-        flexDirection: 'row',
+        //flexDirection: 'row',
+        top: 30,
     },
     humanDiseaseSetting: {
         backgroundColor: '#f2f2f2',
         width: 350,
         height: 550,
-        top: 40,
+        //top: 5,
         borderRadius: 30,
         shadowColor: '#000',
         shadowOffset: {
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     humanDisease: {
         backgroundColor: '#9038A5',
         padding: 10,
-        top: 100,
+        top: 81,
         height: 300,
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
@@ -80,6 +81,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         left: 20,
         top: 40,
+        //flexWrap: 'wrap',
+        textAlign: 'center',
+        lineHeight: 43,
     },
     backDesign: {
         backgroundColor: '#9038A5',
@@ -90,6 +94,22 @@ const styles = StyleSheet.create({
         transform: [{ rotate: '40deg' }],
         zIndex: -1,
         top: 300,
+    },
+    searchSetting: {
+        backgroundColor: '#f9f9f9',
+        borderRadius: 7,
+        borderColor: '#9038a5',
+        borderWidth: 0.6,
+        width: '90%',
+        height: 40,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        marginTop: 50,
+    },
+    searchInput: {
+        color: '#839192',
+        left: 12,
+        top: 1.5,
     },
 });
 

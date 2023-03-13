@@ -60,22 +60,6 @@ const SelectDisease: FC = ({ route }) => {
     //     }
     // };
 
-    const openCamera = async () => {
-        launchCamera(options, async response => {
-            if (response.didCancel) {
-                console.log('User cancelled image picker');
-            } else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            } else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            } else {
-                const uri = response?.assets[0]?.uri;
-                const path = Platform.OS !== 'ios' ? uri : 'file://' + uri;
-                getResult(path, response);
-            }
-        });
-    };
-
     const predictDisease = async (image) => {
         try {
             const apiUrl = 'https://us-central1-fyp-potato-dataset.cloudfunctions.net/predict'; // Replace with your deployed endpoint URL
@@ -117,8 +101,24 @@ const SelectDisease: FC = ({ route }) => {
             setLabel(res.class);
             setConfidence(res.confidence);
         } else {
-            setLabel("Failed to predict");
+            setLabel('Failed to predict');
         }
+    };
+
+    const openCamera = async () => {
+        launchCamera(options, async response => {
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                const uri = response?.assets[0]?.uri;
+                const path = Platform.OS !== 'ios' ? uri : 'file://' + uri;
+                getResult(path, response);
+            }
+        });
     };
 
 

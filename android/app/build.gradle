@@ -58,6 +58,8 @@ react {
  * use App Bundles (https://developer.android.com/guide/app-bundle/)
  * and want to have separate APKs to upload to the Play Store.
  */
+
+tasks.register("prepareKotlinBuildScriptModel"){}
 def enableSeparateBuildPerCPUArchitecture = false
 
 /**

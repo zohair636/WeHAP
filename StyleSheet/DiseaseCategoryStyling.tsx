@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     humanDisease: {
         backgroundColor: '#9038A5',
         padding: 10,
-        top: 100,
+        top: 81,
         height: 300,
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
